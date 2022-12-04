@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text="center">CRUD IONIC FIREBASE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-div ion-padding">
+    <h1 class="ion-padding">list de depenses</h1>
+
+    <div class="liste">
+      <ion-list>
+      <ion-item-sliding *ngFor="let transaction of transactions">
+        <ion-item>
+          <ion-label>
+            {{transaction.titre}}
+            <p [ngClass]="{ income :transaction.type == 'income', expense :transaction.type == 'expense'}">{{transaction.soustitre}}</p>
+          </ion-label>
+          <p class="montant" [ngClass]="{ income :transaction.type == 'income', expense :transaction.type == 'expense'}">{{transaction.montant}} Fcfa</p>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger">
+            <ion-icon name="trash-outline" (click)="supprimer(transaction.id)" ></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="dark">
+            <ion-icon name="create-outline" routerLink="/editer/{{transaction.id}}"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      </ion-list>
+    </div>
+    <ion-fab-button routerLink="/editer/ajouter" color="dark" size="small">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+.titre {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.img-bg {
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/bg.jpg');
+    background-repeat: no-repeat;                   // ça  c'est pour que l'image ne se repete pas
+    background-size: cover;                         // ça  c'est pour que l'image se centre au mileu de l'écran
+}
+
+h1 {
+    color: white;
+    margin-left: 20px;
+    font-size: 30px;
+}
+h5 {
+    color: #e8e8e8;
+    margin-left: 20px;
+    margin-top: -7px;
+    font-size: medium;
+    margin-bottom: 15px;
+    text-transform: capitalize;             // Pour mette chaque mot du date en Maj
+}
+
+.add-button {
+    --background: #383a3e;
+    position: absolute;
+    bottom: 5px;
+    width: 96%;
+    --color: #ffffff;
+    margin-left: 2%;
+}
+
+ion-card {
+    margin-bottom: 0px;
+    margin-top: 6px;
+}
+
+ion-toolbar {
+    --background: #5a8ca4;
+    color: #e8e8e8;
+}

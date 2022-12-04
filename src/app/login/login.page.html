@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <ion-card *ngIf="!connect">
+      <h2 text="center">Connexion</h2>
+      <p *ngIf="message">{{message}}</p>
+      <ion-card>
+        <ion-item>
+          <ion-label><b>Email: </b> </ion-label>
+          <ion-input type="email" [(ngModel)]="user.email" placeholder="votre adress email"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-label><b>Password: </b></ion-label>
+          <ion-input type="password" [(ngModel)]="user.password"  placeholder="votre mot de passe"></ion-input>
+        </ion-item>
+      </ion-card>
+      <div class="lien">
+        <a >mot de passe oublier</a>
+        <a [routerLink]="['/inscription']">s'inscrire</a>
+      </div>
+      <ion-button (click)="login()" expand="block">Se connecter</ion-button>
+    </ion-card>
+    <ng-container *ngIf="connect">
+      <h1> je me suis connecter</h1>
+      <ion-button (click)="deconnecter()" expand="block" color="danger">Deconnection</ion-button>
+    </ng-container>
+  </div>
+</ion-content>

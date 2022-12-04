@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>page-incription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+  <ion-card>
+    <h2 text="center">Inscription</h2>
+    <p class="message" *ngIf="message">{{message}}</p>
+    <ion-item>
+      <ion-label><b>Pseudo: </b></ion-label>
+      <ion-input [(ngModel)]="utilisateurs.pseudo" type="text" placeholder="nom d'utilisateur"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Nom: </b></ion-label>
+      <ion-input type="text" [(ngModel)]="utilisateurs.nom" placeholder="votre nom"></ion-input>
+    </ion-item>
+    <p class="msgn" *ngIf="msgn">{{msgn}}</p>
+    <ion-item>
+      <ion-label><b>Prenom: </b></ion-label>
+      <ion-input type="text" [(ngModel)]="utilisateurs.prenom" placeholder="votre prénom"></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-label><b>Email: </b> </ion-label>
+        <ion-input type="email" [(ngModel)]="utilisateurs.email" placeholder="votre adress email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><b>Âge: </b> </ion-label>
+        <ion-input type="number" [(ngModel)]="utilisateurs.age"  placeholder="votre âge"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><b>Mot de passe: </b> </ion-label>
+        <ion-input [(ngModel)]="utilisateurs.mdp" type="password"placeholder="votre mot de passe"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><b>Confirmer: </b> </ion-label>
+        <ion-input [(ngModel)]="utilisateurs.mdpconf" type="password"placeholder="confirmer le mot passe"></ion-input>
+      </ion-item>
+      <div class="button">
+        <ion-button (click)="confirmer()" >Valider</ion-button>
+        <ion-button [routerLink]="['/login']" color="danger">Annuler</ion-button>
+      </div>
+  </ion-card>
+</div>
+</ion-content>

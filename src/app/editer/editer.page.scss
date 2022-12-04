@@ -1,0 +1,31 @@
+ion-icon{
+    font-size: 1.5rem;
+}
+
+ion-icon:focus{
+    outline: none;
+}
+
+.main-section{
+    h3{
+        margin-bottom: 0px;
+    }
+    .form {
+        border: 1px solid #000000;
+        border-radius: 10px;
+    }
+    ion-select {
+        border: 1px solid #dddddd;
+        border-radius: 17px;
+    }
+
+    ion-input {
+        border: 1px solid #dddddd;
+        margin: 15px 0px;
+        border-radius: 17px;
+        --padding-start: 23px;
+    }
+    ion-button {
+        --border-radius: 17px;
+    }
+}

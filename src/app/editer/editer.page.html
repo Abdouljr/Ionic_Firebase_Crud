@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-icon name="arrow-back-outline" class="ion-padding" routerLink="/crud"></ion-icon>
+  <div class="main-section">
+    <h3 class="ion-padding"> {{ estModifier ? 'Modifier Transaction':'Ajouter Transaction'}}</h3>
+    <div class="form ion-padding ion-margin">
+      <ion-select interface="action-sheet" placeholder="Sélectionner le type" [(ngModel)]="type"> 
+        <ion-select-option value="expense"> expense</ion-select-option>
+        <ion-select-option value="income"> income</ion-select-option>
+      </ion-select>
+      <ion-input placeholder=" titre" [(ngModel)]="titre"></ion-input>
+      <ion-input placeholder=" sous titre" [(ngModel)]="soustitre"></ion-input>
+      <ion-input placeholder=" montant" type="number" [(ngModel)]="montant"></ion-input>
+
+      <ion-button color="dark" expand="block" (click)="ajouterTransaction()">{{estModifier ? 'Modifier':'Ajouter'}}&nbsp;<ion-spinner *ngIf="chargement"></ion-spinner></ion-button>
+    </div>
+  </div>
+</ion-content>
